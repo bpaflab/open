@@ -1,0 +1,284 @@
+% !TEX root = MEDI301_lectures.tex
+
+% theme
+\usetheme[progressbar=frametitle, numbering=none]{metropolis}
+% Use the following for changing colours during the presentation:
+% \tolightbg
+% \todarkbg
+% \toblackbg
+
+% Load packages
+\usepackage[absolute,overlay]{textpos} % absolute placement of figures and text
+\usepackage[sfdefault]{FiraSans}
+\usepackage[nomap]{FiraMono}
+\usepackage[british]{babel}
+\usepackage{graphicx,multicol,tikz,booktabs}
+\usepackage[version=3]{mhchem}
+\usepackage{fancyhdr} % for headers and footers
+\usepackage{animate} % for sequential display of pictures
+\usepackage{chngcntr}% within section numbering of figures
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+\usepackage{pdfpages} % for inclusion of pdf export of powerpoint presentations
+\usepackage{media9} % for inclusion of videos
+\usepackage{authoraftertitle} % gives access to title, date and author
+\usepackage[section]{placeins} % keeps figures within subsections i.e. before next subsection header
+\makeatletter
+\AtBeginDocument{%
+ \expandafter\renewcommand\expandafter\subsection\expandafter{%
+  \expandafter\@fb@secFB\subsection
+ }%
+}
+\makeatother
+
+% \only<article>{\usepackage[scale=0.9]{geometry}}
+
+% New commands to change background colours mid presentation
+\newcommand{\tolightbg}{
+  \only<presentation>{
+  \setbeamercolor{background canvas}{bg=white}
+  \metroset{background=light}
+  \usebeamercolor[fg]{normal text}
+  }
+}
+\newcommand{\todarkbg}{
+  \only<presentation>{
+  \metroset{background=dark}
+  \setbeamercolor{background canvas}{bg=mDarkTeal}
+  \usebeamercolor[fg]{normal text}
+  }
+}
+\newcommand{\toblackbg}{
+  \only<presentation>{
+  \metroset{background=dark}
+  \setbeamercolor{background canvas}{bg=black}
+  \usebeamercolor[fg]{normal text}
+  }
+}
+
+% Define Macquarie University colour set ( https://staff.mq.edu.au/services_and_facilities/marketing/online_resources/our_shared_identity/colour/ )
+\definecolor{charcoal}{HTML}{373A36}
+\definecolor{deepred}{HTML}{76232F}
+\definecolor{mqred}{HTML}{A6192E}
+\definecolor{brightred}{HTML}{D6001C}
+\definecolor{mqmagenta}{HTML}{C6007E}
+\definecolor{mqpurple}{HTML}{80225F}
+\definecolor{sand}{HTML}{D6D2C4}
+
+% Assign colours to elements
+% \setbeamercolor{progress bar}{deepred}
+% \setbeamercolor{progress bar in head/foot}{deepred}
+% \setbeamercolor{progress bar in section page}{deepred}
+% \setbeamercolor{frametitle}{fg=white,bg=charcoal}
+% \setbeamercolor{framesubtitle}{fg=white,bg=charcoal}
+\setbeamercolor*{block body}{bg=sand,fg=charcoal}
+\setbeamercolor*{block title}{bg=mqred,fg=white}
+% \setbeamercolor{section in head/foot}{fg=white, bg=charcoal}
+% \setbeamercolor{item projected}{bg=mqred}
+% \setbeamercolor{local structure}{fg=deepred,bg=white}
+% \setbeamercolor{section in toc}{fg=white}
+% \setbeamercolor{subsection in toc}{fg=white}
+\setbeamercolor{alerted text}{fg=mqmagenta}
+
+% % Grab title, date and author details
+% \makeatletter
+% \let\newtitle\@title%
+% \let\newauthor\@author%
+% \let\newdate\@date%
+% \makeatother
+
+% Header / title page
+\only<article>{
+% \setlength{\headheight}{72pt}
+% \setlength{\footheight}{1pt}
+ \fancyhf{}
+ \rhead{\raggedleft{\includegraphics[width=0.5\textwidth]{MQ_INT_HOR_RGB_POS}}}
+ \vspace{-1.5cm}
+ \lhead{
+  \begin{scriptsize}
+   \begin{sffamily}
+    \textbf{Vascular Research Laboratory}\\
+    \textbf{DEPARTMENT OF}\\
+    \textbf{BIOMEDICAL SCIENCES}\\
+    \emph{Faculty of Medicine and Health Sciences}\\
+   \end{sffamily}
+   Macquarie University\\
+   NSW 2109 Australia\\
+   % \textbf{T:} +61 (2) 9812 3500\\
+   % \textbf{F:} +61 (2) 9812 3600\\
+   % mq.edu.au\\
+  \end{scriptsize}
+  % \begin{sffamily}
+  % 	\begin{tiny}
+  % 		ABN 90 952 801 237
+  % 	\end{tiny}
+  % \end{sffamily}
+ }
+
+ \fancypagestyle{main}{
+   \fancyhf{}
+   \fancyhead[R]{\thepage}
+   \fancyhead[L]{\rightmark}
+ }
+}
+
+\newcommand{\presentationheader}{
+  \only<article>{
+  \setlength{\headheight}{72pt}
+  % \setlength{\footheight}{1pt}
+  \maketitle
+  \thispagestyle{fancy}
+  \tableofcontents%
+  \newpage
+  \setlength{\headheight}{0pt}
+  \thispagestyle{plain}
+  \pagestyle{plain}
+ }
+
+ \only<presentation>{
+ 	\todarkbg
+ 	\frame[plain, label=first]{
+ 	 \tiny
+ 	 \begin{tikzpicture}[remember picture,overlay]
+ 	  \node[anchor=north east,xshift=0pt,yshift=0pt] at (current page.north east) {\includegraphics[height=1.4cm]{images/MQ_INT_HOR_RGB_REV}};
+ 	 \end{tikzpicture}
+ 	 \begin{tikzpicture}[remember picture,overlay]
+ 	  \node[anchor=south east,xshift=5pt,yshift=4pt] at (current page.south east) {\includegraphics[height=0.534\textheight]{images/MQ_TitleSlideImage}};
+ 	 \end{tikzpicture}
+ 	 \begin{tikzpicture}[remember picture,overlay]
+ 	  \node[anchor=south west,xshift=-5pt,yshift=3pt] at (current page.south west) {\includegraphics[height=0.54\textheight]{images/MQ_FancyBit}};
+ 	 \end{tikzpicture}
+
+ 	 \begin{textblock*}{\textwidth}(0.5cm,1.5cm)
+     \Large\MyTitle
+   \end{textblock*}
+
+ 	 \begin{textblock*}{\textwidth}(0.5cm,4cm)
+ 	   \large\MyAuthor
+   \end{textblock*}
+
+ 	 \begin{textblock*}{0.5\textwidth}(0.5cm,5cm)
+ 	   \begin{small}
+ 	     \insertinstitute
+ 	   \end{small}
+   \end{textblock*}
+
+   \begin{textblock*}{0.5\textwidth}(0.5cm,8cm)
+ 	   \begin{small}
+       \MyDate
+ 	   \end{small}
+   \end{textblock*}
+
+ 	 \normalsize
+ 	}
+ 	\tolightbg
+
+  % \tableofcontents[sectionstyle=show/show,subsectionstyle=hide/hide/hide,subsubsectionstyle=hide/hide/hide]
+ %    \normalsize
+ %    \color{black}
+ %   \end{frame}
+ %   \pagecolor{white}
+ %  }
+}}
+
+% Function for autotitle of slide using section and subsection
+\newcommand{\startframe}{\only<presentation>{\frametitle{\insertsection\\\footnotesize{\insertsubsection}}}}
+
+\newcommand{\startsubframe}{\only<presentation>{\frametitle{\insertsubsection\\\footnotesize{\insertsubsubsection}}}}
+
+% % Section table of contents at beginning of each section
+% \AtBeginSection[]{\only<presentation>{
+%   \pagecolor{charcoal}
+%   \begin{frame}[plain]
+%    \color{white}
+%    \huge
+%    \insertsection\\
+%    ~\\
+%    \large
+%    \tableofcontents[currentsection,sectionstyle=hide/hide,subsectionstyle=show/show/hide,subsubsectionstyle=hide/hide/hide]
+%    \normalsize
+%    \color{black}
+%   \end{frame}
+%   \pagecolor{white}
+%  }}
+
+% % Subsection separators
+% \AtBeginSubsection[]{\only<presentation>{
+%   \pagecolor{charcoal}
+%   \begin{frame}[plain]
+%    \color{white}
+%    \large
+%    \insertsection\\
+%    ~\\
+%    \huge
+%    \insertsubsection
+%    \normalsize
+%    \color{black}
+%   \end{frame}
+%   \pagecolor{white}
+%  }}
+
+%remove horizontal line for footnotes
+\renewcommand\footnoterule{\moveleft1cm\vbox{\textcolor{darkgray}{\rule{\paperwidth}{0pt}}\vskip 1mm}}
+% adds command for footnotes without a marker
+\newcommand\nmfootnote[1]{%
+  \only<presentation>{
+ \begingroup
+ \renewcommand\thefootnote{}\footnote[frame]{\tiny\raggedleft #1}%
+ \addtocounter{footnote}{-1}%
+ \endgroup
+ }
+ \only<article>{
+  \ffotnote{#1}
+ }
+}
+
+% % Remove navigation panel from header and place in footer
+% \makeatletter
+% \setbeamertemplate{headline}{}
+% \setbeamertemplate{footline}{%
+%  \begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}
+%  \end{beamercolorbox}
+%  \begin{beamercolorbox}{section in head/foot}
+%   % \vskip2pt\insertnavigation{\paperwidth}\vskip2pt% gives dots
+%   \insertsectionnavigationhorizontal{\paperwidth}{}{\hfill\hfill} % no dots
+%  \end{beamercolorbox}%
+%  \begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}
+%  \end{beamercolorbox}
+% }
+% \makeatother
+
+% command for including graphics, different width in article than presentation
+\newcommand{\graphic}[6]{%
+ \only<presentation>{
+  \only<{#2}>{
+  \includegraphics[{#3}]{{#1}}
+  \note{#5}
+  \nmfootnote{#6}
+  }}
+ \only<article>{
+  \begin{figure}[ht]
+   \centering
+   \includegraphics[{#4}]{{#1}}
+   \caption{\protect{#5}~(\protect{#6})}
+   \label{fig:#1}
+  \end{figure}
+ }
+}
+
+% command for including tables, with a table environment in article format
+\newcommand{\tableslide}[3]{%
+ \only<presentation>{
+  {#1}
+  \nmfootnote{#3}
+
+  \note{#2}
+ }
+ \only<article>{
+  \begin{table}[ht]
+   \caption{\protect{#2}~(\protect{#3})}
+   \centering
+   {#1}
+  \end{table}
+ }
+}

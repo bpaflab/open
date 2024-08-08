@@ -1,0 +1,70 @@
+\documentclass{beamer}
+\usetheme{ASAM}
+
+\title{The title of your scientific poster with some more text to test a second line of the title}
+\author{
+	Author 1\textsuperscript{1},~
+	Author 2\textsuperscript{2}.}
+\institute{
+	\textsuperscript{1} Faculty of Medicine and Health Sciences, Macquarie University, Sydney, Australia.\\%
+	\textsuperscript{2} Institution 2.
+}
+\renewcommand{\emailaddress}{your.address@mq.edu.au}
+\renewcommand{\webaddress}{medicine.mq.edu.au}
+\renewcommand{\headspacer}{195mm} % add to this length if title/authors/institutions is longer than the default coloured space.
+
+
+\begin{document}
+
+\makemytitle
+
+\begin{multicols}{2}
+ \posterhead{Introduction}
+ \begin{itemize}
+  \item Introduction text
+  \item \ldots
+ \end{itemize}
+
+ \vspace{1cm}
+ \posterhead{Methods}
+ \begin{itemize}
+  \item Outline of methods, as per Figure \ref{fig:method}.
+  \item \ldots
+ \end{itemize}
+
+ \begin{figure}
+  \vspace{1cm}
+  \centering
+  \Large{Figure}
+  \vspace{2cm}
+  \caption{Caption text.}
+  \label{fig:method}
+ \end{figure}
+
+ \columnbreak
+ \posterhead{Results}
+
+ \begin{itemize}
+  \item Description of results and findings.
+  \item \ldots
+ \end{itemize}
+
+ \begin{figure}
+  \vspace{1cm}
+  \centering
+  \Large{Figure}
+  \vspace{2cm}
+  \caption{Caption text.}
+  \label{fig:result1}
+ \end{figure}
+
+ \vspace{1cm}
+ \posterhead{Conclusions}
+ \begin{itemize}
+  \item Draw conclusions.
+  \item \ldots
+ \end{itemize}
+
+\end{multicols}
+
+\end{document}

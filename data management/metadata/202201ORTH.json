@@ -1,0 +1,73 @@
+{
+    "study_title": "Comparison of Active Stand and Head-up Tilt Table Testing for the Diagnosis of Orthostatic Intolerance Syndromes",
+    "study_id": "202201ORTH",
+    "study_location": "Blood Pressure and Arterial Function Laboratory, Level 2, 2 Technology Place, Macquarie University.",
+    "folder_location": "https://mqoutlook.sharepoint.com/:f:/r/sites/o365-group-vascularresearch-studies/Shared%20Documents/studies/202201ORTH?csf=1&web=1&e=glL5g1",
+    "ethics_location": "https://fora-form.mq.edu.au/Project/Index/24885",
+    "data_management_plan": "",
+    "pure_record": "",
+    "mq_repository": "",
+    "study_start_date": "20220101",
+    "study_end_date": "20230401",
+    "study_description": " This study proposes to study variables associated with orthostatic testing to see what needs to be controlled, and what would be the best way to control it, in order to improve the testing protocol. Primary comparison is head-up tilt versus active stand.",
+    "principal_investigator": [
+        "Gisele Bentley"
+    ],
+    "personnel": [
+        "Mark Butlin",
+        "Karen Peebles",
+        "Isabella Tan",
+        "Vaidehi Desai"
+    ],
+    "data_sets": [
+        {
+            "data_set_name": "data set 1 name",
+            "description": "primary data set",
+            "location": "sharepoint/location",
+            "format": "csv or labchart or etc",
+            "data_starts_on_line": "2",
+            "data_fields": [
+                {
+                    "field": "time",
+                    "description": "time of measurement",
+                    "type": "integer / float / string",
+                    "units": "s",
+                    "device": "LabChart"
+                },
+                {
+                    "field": "electrocardiogram",
+                    "description": "Lead II ECG",
+                    "type": "integer / float / string",
+                    "units": "mV",
+                    "device": "ADInstruments Bioamplifier"
+                }
+            ]
+        },
+        {
+            "data_set_name": "data set 2 name",
+            "description": "Variables derived from data set 1 name.",
+            "location": "sharepoint/location",
+            "format": "csv or labchart or etc",
+            "data_starts_on_line": "2",
+            "data_fields": [
+                {
+                    "field": "time",
+                    "description": "time of variable",
+                    "type": "integer / float / string",
+                    "units": "s",
+                    "device": "calculated"
+                },
+                {
+                    "field": "RR_interval",
+                    "description": "RR interval from electrocardiogram.",
+                    "type": "integer / float / string",
+                    "units": "s",
+                    "device": "calculated"
+                }
+            ]
+        }
+    ],
+    "id_list": [
+        "ORTH001"
+    ]
+}

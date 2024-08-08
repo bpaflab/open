@@ -1,0 +1,74 @@
+{
+    "study_title": "Validity of interarm difference in blood pressure and its association with beat-to-beat blood pressure variability",
+    "study_id": "202304IABP",
+    "study_location": "Blood Pressure and Arterial Function Laboratory, Macquarie University, Sydney Australia.",
+    "folder_location": "https://mqoutlook.sharepoint.com/:f:/r/sites/o365-group-vascularresearch-studies/Shared%20Documents/studies/202304IABP?csf=1&web=1&e=dFNAba",
+    "ethics_location": "https://fora-form.mq.edu.au/Project/Index/30240",
+    "data_management_plan": "https://fora-form.mq.edu.au/Project/Index/32065",
+    "pure_record": "https://research-management.mq.edu.au/admin/editor/dk/atira/pure/modules/unifiedprojectmodel/external/model/project/editor/upmprojecteditor.xhtml?scheme=&type=&id=226241423",
+    "mq_repository": "https://figshare.mq.edu.au/account/home#/projects/161434",
+    "study_start_date": "20230401",
+    "study_end_date": "YYYYMMDD",
+    "study_description": "",
+    "principal_investigator": [
+        "Vaidehi Desai"
+    ],
+    "personnel": [
+        "Mark Butlin",
+        "Karen Peebles",
+        "Isabella Tan",
+        "Alberto Avolio",
+        "James Cox"
+    ],
+    "data_sets": [
+        {
+            "data_set_name": "data set 1 name",
+            "description": "primary data set",
+            "location": "sharepoint/location",
+            "format": "csv or labchart or etc",
+            "data_starts_on_line": "2",
+            "data_fields": [
+                {
+                    "field": "time",
+                    "description": "time of measurement",
+                    "type": "integer / float / string",
+                    "units": "s",
+                    "device": "LabChart"
+                },
+                {
+                    "field": "electrocardiogram",
+                    "description": "Lead II ECG",
+                    "type": "integer / float / string",
+                    "units": "mV",
+                    "device": "ADInstruments Bioamplifier"
+                }
+            ]
+        },
+        {
+            "data_set_name": "data set 2 name",
+            "description": "Variables derived from data set 1 name.",
+            "location": "sharepoint/location",
+            "format": "csv or labchart or etc",
+            "data_starts_on_line": "2",
+            "data_fields": [
+                {
+                    "field": "time",
+                    "description": "time of variable",
+                    "type": "integer / float / string",
+                    "units": "s",
+                    "device": "calculated"
+                },
+                {
+                    "field": "RR_interval",
+                    "description": "RR interval from electrocardiogram.",
+                    "type": "integer / float / string",
+                    "units": "s",
+                    "device": "calculated"
+                }
+            ]
+        }
+    ],
+    "id_list": [
+        "IABP001"
+    ]
+}

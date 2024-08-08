@@ -1,0 +1,249 @@
+% this style was created by Philippe Dreuw and Thomas Deselaers
+\ProvidesPackage{beamerthemeASAM}
+\usepackage[orientation=portrait,size=a0,scale=1.5,debug]{beamerposter}
+\setbeamersize{text margin left=3.5cm, text margin right=3.5cm}
+%\usepackage{helvet}
+%\renewcommand{\rmdefault}{phv} % Arial
+\renewcommand{\sfdefault}{phv} % Arial
+\usepackage{booktabs}
+\usepackage{calc}
+\usepackage{enumitem} %for setting spacing of itemize/enumerate lists
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage[percent]{overpic} % for putting objects in absolute positions on poster
+\usepackage{qrcode}
+\usepackage{ragged2e} % justification of text within a Beamer environment
+\usepackage{setspace}
+\usepackage{tikz}
+% \usepackage{titlesec} % for changing format of section headings (make them poster headings)
+\usepackage{wrapfig}
+
+% \usepackage{arev}
+% \usepackage[T1]{fontenc}
+
+% \usepackage{cmbright}
+% \usepackage[T1]{fontenc}
+
+% \usepackage{sansmathfonts}
+% \usepackage[T1]{fontenc}
+% \renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+
+% \usepackage[condensed,math]{iwona}
+% \usepackage[T1]{fontenc}
+
+% \usepackage[sfmath]{kpfonts} %% sfmath option only to make math in sans serif. Probablye only for use when base font is sans serif.
+% \renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+% \usepackage[T1]{fontenc}
+
+% \usepackage[condensed,math]{kurier}
+% \usepackage[T1]{fontenc}
+
+% \usepackage[default]{gfsneohellenic}
+% \usepackage[LGR,T1]{fontenc} %% LGR encoding is needed for loading the package gfsneohellenic
+
+% \usepackage{epigrafica}
+% \usepackage[LGR,OT1]{fontenc}
+
+% \usepackage[T1]{fontenc}
+% \usepackage{lxfonts}
+
+\usepackage[T1]{fontenc}
+\usepackage[sfdefault]{FiraSans}
+% \usepackage[]{FiraMono}
+\usepackage{amsmath}
+\usepackage{sansmathfonts}
+
+\setlength{\columnsep}{2cm}
+
+\newlength{\headspacer}
+\setlength{\headspacer}{115mm}
+
+\hyphenpenalty=10000 % Make hyphen penalty large so less (or no) hyphenation
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\RequirePackage{tangocolors}
+\selectcolormodel{cmyk}
+\mode<presentation>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% colour pallette
+\definecolor{charcoal}{cmyk}{0.50,0.30,0.40,0.90}
+\definecolor{deepred}{cmyk}{0.16,1,0.65,0.58}
+\definecolor{mqred}{cmyk}{0.07,100,0.82,0.26}
+\definecolor{brightred}{cmyk}{0,0.97,1,0.03}
+\definecolor{mqmagenta}{cmyk}{0.12,100,0,0}
+\definecolor{mqpurple}{cmyk}{0.32,1,0.11,0.41}
+\definecolor{sand}{cmyk}{0.03,0.04,0.14,0.08}
+\definecolor{silver}{cmyk}{0.21,0.11,0.09,0.23}
+
+%\setbeamercolor{headline}{fg=charcoal,bg=white}
+\setbeamercolor{footline}{fg=deepred}
+\setbeamerfont{footline}{size=\normalsize}
+%\setbeamercolor{separation line}{bg=ta2orange}
+\setbeamercolor{title in headline}{fg=black}
+\setbeamercolor{author in headline}{fg=black}
+\setbeamercolor{institute in headline}{fg=black}
+
+\setbeamercolor{framesubtitle}{fg=deepred}
+\setbeamercolor{author in head/foot}{fg=deepred}
+%\setbeamercolor{title in head/foot}{fg=ta2orange, bg=black}
+
+%\setbeamercolor*{normal text}{fg=tachameleon, bg=ta3gray}
+%\setbeamercolor*{block body}{bg=ta3aluminium,fg=black}
+\setbeamercolor*{block title}{fg=deepred}
+%\setbeamerfont{block title}{size=\large,series=\bf}
+%\setbeamercolor{upper separation line head}{fg=ta2orange}
+
+%\setbeamercolor*{example body}{fg=ta3aluminium,bg=black}
+%\setbeamercolor*{example text}{fg=ta3aluminium,bg=black}
+%\setbeamercolor*{example title}{bg=taorange,fg=ta2gray}
+
+%\setbeamercolor{alerted text}{fg=ta3gray}
+
+%\setbeamercolor{example text}{fg=white}
+\setbeamercolor{structure}{fg=deepred}
+
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{navigation symbols}{}  % no navigation on a poster
+\setbeamertemplate{caption}[numbered]  % add numbers to figures and tables
+\graphicspath{{images/}}
+\newcommand{\posterhead}[1]{
+ \color{deepred}
+ \begin{LARGE}#1
+
+  \vspace{0.5ex}
+
+ \end{LARGE}
+ \color{black}\normalsize
+}
+\makeatletter
+\renewcommand\section{%
+  \@startsection{subsection}{3}{\z@}{3.25ex \@plus1ex \@minus -.2ex}%
+  {1.5ex \@plus .2ex}{\normalfont\LARGE\color{deepred}}}
+\makeatother
+
+\newcommand{\emailaddress}{your.address@mq.edu.au}
+\newcommand{\webaddress}{medicine.mq.edu.au}
+\newcommand{\downloadaddress}{www.researchgate.net/profile/Mark_Butlin}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\newbox\@backgroundblock
+\newenvironment{backgroundblock}[2]{%
+ \global\setbox\@backgroundblock=\vbox\bgroup%
+ \unvbox\@backgroundblock%
+ \vbox to0pt\bgroup\vskip#2\hbox to0pt\bgroup\hskip#1\relax%
+}{\egroup\egroup\egroup}
+\addtobeamertemplate{background}{\box\@backgroundblock}{}
+\makeatother
+
+\newcommand{\makemytitle}{
+  \newlength{\headspacertop}
+  \setlength{\headspacertop}{\headspacer-815mm}
+  \begin{backgroundblock}{-5mm}{\headspacertop}
+    \includegraphics[width=850mm]{MQ_LG_TRAV_D2_5COL_CMYK}
+  \end{backgroundblock}
+
+ \begin{backgroundblock}{-5mm}{\headspacer}
+  \includegraphics[width=75mm]{MQ_LG_TRAV_D1_5COL_CMYK}
+ \end{backgroundblock}
+
+ \begin{backgroundblock}{70mm}{\headspacer}
+  \includegraphics[width=75mm]{MQ_LG_TRAV_D1_5COL_CMYK}
+ \end{backgroundblock}
+
+ \begin{backgroundblock}{145mm}{\headspacer}
+  \includegraphics[width=75mm]{MQ_LG_TRAV_D1_5COL_CMYK}
+ \end{backgroundblock}
+
+ \begin{backgroundblock}{220mm}{\headspacer}
+  \includegraphics[width=75mm]{MQ_LG_TRAV_D1_5COL_CMYK}
+ \end{backgroundblock}
+
+ \begin{backgroundblock}{295mm}{\headspacer}
+  \includegraphics[width=75mm]{MQ_LG_TRAV_D1_5COL_CMYK}
+ \end{backgroundblock}
+
+ \begin{backgroundblock}{370mm}{\headspacer}
+  \includegraphics[width=75mm]{MQ_LG_TRAV_D1_5COL_CMYK}
+ \end{backgroundblock}
+
+ \begin{backgroundblock}{445mm}{\headspacer}
+  \includegraphics[width=75mm]{MQ_LG_TRAV_D1_5COL_CMYK}
+ \end{backgroundblock}
+
+ \begin{backgroundblock}{520mm}{\headspacer}
+  \includegraphics[width=75mm]{MQ_LG_TRAV_D1_5COL_CMYK}
+ \end{backgroundblock}
+
+ \begin{backgroundblock}{595mm}{\headspacer}
+  \includegraphics[width=75mm]{MQ_LG_TRAV_D1_5COL_CMYK}
+ \end{backgroundblock}
+
+ \begin{backgroundblock}{670mm}{\headspacer}
+  \includegraphics[width=75mm]{MQ_LG_TRAV_D1_5COL_CMYK}
+ \end{backgroundblock}
+
+ \begin{backgroundblock}{745mm}{\headspacer}
+  \includegraphics[width=75mm]{MQ_LG_TRAV_D1_5COL_CMYK}
+ \end{backgroundblock}
+
+ \begin{backgroundblock}{820mm}{\headspacer}
+  \includegraphics[width=75mm]{MQ_LG_TRAV_D1_5COL_CMYK}
+ \end{backgroundblock}
+
+ \color{white}
+ ~\\
+ \noindent\textbf{\huge{\inserttitle\\}}
+ \vspace{0.5cm}
+ \Large{\hspace{-12pt}\noindent \textsc{\insertauthor}\\}
+ \vspace{0.5cm}
+ \normalsize{\hspace{-12pt}\noindent\insertinstitute\\}
+ \normalsize
+
+ \vspace{4cm}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{footline}{
+ \begin{beamercolorbox}[leftskip=3.5cm,rightskip=3.5cm]{author in head/foot}%
+  \normalsize{\emailaddress}
+  \hfill
+  \small
+  Available for download:~~
+  \color{black}{\qrcode[height=2cm,padding]{\downloadaddress}}
+  \color{deepred}{\url{\downloadaddress}
+   \hfill
+   \raisebox{-1.5cm}{\includegraphics[height=4cm]{MQ_INT_HOR_CMYK_POS}}
+  }
+
+  \vspace{-1cm}
+ \end{beamercolorbox}
+ \begin{beamercolorbox}[leftskip=3.5cm,rightskip=3.5cm]{author in head/foot}%
+  \tiny{CRICOS Provider 00002J}
+  \vskip1ex
+ \end{beamercolorbox}
+ \vskip0pt%
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Increase space between bullet points and text
+\setlist[itemize,1]{label=\textcolor{mqred}{\textbullet}, labelsep=3\labelsep, leftmargin=*}
+\setlist[itemize,2]{label=\textcolor{mqred}{\textbullet}, labelsep=\labelsep, leftmargin=*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Display a grid to help align images
+%\beamertemplategridbackground[1cm]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<all>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-PDF-mode: t
+%%% TeX-master: "poster"
+%%% End:

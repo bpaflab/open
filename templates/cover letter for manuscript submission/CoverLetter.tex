@@ -1,0 +1,59 @@
+\documentclass[12pt,a4paper]{letter}
+\usepackage[english]{babel}
+\usepackage{fancyhdr, graphicx, microtype}
+\usepackage[left=4cm,top=3cm,bottom=1cm,right=4cm,nofoot]{geometry}
+
+\signature{\vspace{-1.5cm}\includegraphics[width=0.4\textwidth]{signature}\\Dr Mark Butlin\\Senior Lecturer\\Department of Biomedical Sciences\\Faculty of Medicine and Health Sciences, Macquarie University}
+\address{}
+\newcommand{\manuscripttitle}{Manuscript Title}
+\newcommand{\journal}{Journal Title}
+\newcommand{\justification}{Reason for publishing in this journal / summary of findings.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Should not need to edit beyond this point
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fancyhf{}
+\rhead{\raggedleft{\includegraphics[width=0.5\textwidth]{MQ_INT_HOR_RGB_POS}}\vspace{1cm}}
+%\vspace{1cm}}
+\lhead{
+\begin{scriptsize}
+\begin{sffamily}
+\textbf{DEPARTMENT OF}\\
+\textbf{BIOMEDICAL SCIENCES}\\
+\emph{Faculty of Medicine}\\
+\end{sffamily}
+Macquarie University\\
+NSW 2109 Australia\\
+\textbf{T:} +61 (2) 9812 3500\\
+\textbf{F:} +61 (2) 9812 3600\\
+mq.edu.au\\
+\end{scriptsize}
+\begin{sffamily}
+\begin{tiny}
+ABN 90 952 801 237\\
+CRICOS Provider No 00002J
+\end{tiny}
+\end{sffamily}
+}
+\renewcommand{\headrulewidth}{0pt}
+%\date{date}
+
+\begin{document}
+	\begin{letter}{}
+		\opening{To the Editor-In-Chief,}
+		\thispagestyle{fancy}
+
+		We submit our manuscript entitled:\\``\manuscripttitle''\\to be considered for publication in \emph{\journal}.
+
+		\justification
+
+		This work has been approved by all authors and is not under consideration for publication in whole or part elsewhere, in any language.
+
+		We hope that with proper review that it will be found suitable for publication in \emph{\journal}.
+
+		\closing{Yours sincerely,}
+	\end{letter}
+
+\end{document}

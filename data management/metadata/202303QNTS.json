@@ -1,0 +1,89 @@
+{
+    "study_title": "CMG and QANTAS project",
+    "study_id": "202303QNTS",
+    "study_location": "Mascot, Sydney, Australia.",
+    "folder_location": "https://mqoutlook.sharepoint.com/:f:/r/sites/o365-group-vascularresearch-studies/Shared%20Documents/studies/202303QNTS?csf=1&web=1&e=IqKfSA",
+    "ethics_location": "https://fora-form.mq.edu.au/Project/Index/32068",
+    "pure_record": "",
+    "mq_repository": "",
+    "study_start_date": "20230313",
+    "study_end_date": "20230327",
+    "study_description": "Testing of cardiovascular parameters during simulated 6 hour flight time in business class seats, with intervention of new seat software provided by CMG.",
+    "principal_investigator": [
+        "Barry McDonnell"
+    ],
+    "personnel": [
+        "Mark Butlin",
+        "Amira Tairi",
+        "Albert Avolio",
+        "K Stone",
+        "Jack Bale",
+        "..."
+    ],
+    "data_sets": [
+        {
+            "data_set_name": "data set 1 name",
+            "description": "primary data set",
+            "location": "sharepoint/location",
+            "format": "csv or labchart or etc",
+            "data_fields": [
+                {
+                    "field": "time",
+                    "description": "time of measurement",
+                    "units": "s",
+                    "device": "LabChart"
+                },
+                {
+                    "field": "electrocardiogram",
+                    "description": "Lead II ECG",
+                    "units": "mV",
+                    "device": "ADInstruments Bioamplifier"
+                }
+            ]
+        },
+        {
+            "data_set_name": "data set 2 name",
+            "description": "Variables derived from data set 1 name.",
+            "location": "sharepoint/location",
+            "format": "csv or labchart or etc",
+            "data_fields": [
+                {
+                    "field": "time",
+                    "description": "time of variable",
+                    "units": "s",
+                    "device": "calculated"
+                },
+                {
+                    "field": "RR_interval",
+                    "description": "RR interval from electrocardiogram.",
+                    "units": "s",
+                    "device": "calculated"
+                }
+            ]
+        }
+    ],
+    "id_list": [
+        "QNTS001",
+        "QNTS002",
+        "QNTS003",
+        "QNTS004",
+        "QNTS005",
+        "QNTS006",
+        "QNTS007",
+        "QNTS008",
+        "QNTS009",
+        "QNTS010",
+        "QNTS011",
+        "QNTS012",
+        "QNTS013",
+        "QNTS014",
+        "QNTS015",
+        "QNTS016",
+        "QNTS017",
+        "QNTS018",
+        "QNTS019",
+        "QNTS020",
+        "QNTS021",
+        "QNTS022"
+    ]
+}

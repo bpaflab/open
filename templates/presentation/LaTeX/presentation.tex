@@ -1,0 +1,47 @@
+% for slides:
+\documentclass[hide notes,aspectratio=169]{beamer}
+% % for lecture notes:
+% \documentclass[a4paper,twoside]{article}
+% \usepackage[]{beamerarticle}
+% \usepackage[colorlinks=true,bookmarks=true,bookmarksopen=true]{hyperref}
+
+\input{images/theme.tex}
+
+\title{Presentation title}
+\author{Mark Butlin}
+\institute{Department of Biomedical Sciences\\Faculty of Medicine and Health Sciences\\Macquarie University\\Sydney, Australia.}
+\date{}
+\graphicspath{{images/}}
+
+\begin{document}
+	\presentationheader
+
+	\section{First heading}
+		\subsection{First subheading}
+			\frame{
+				\startframe
+				\graphic{MQ_TitleSlideImage}{1}
+				{height=0.7\textheight}
+				{width=\textwidth}
+				{caption}
+				{source}
+			}
+
+			\begin{frame}[standout]
+				A slide with more impact
+			\end{frame}
+
+	% Repeat title slide at end
+	\todarkbg
+	\againframe<2>[plain]{first}
+
+	% Metropolis theme supports appendix
+	\appendix
+	% completely black background
+	\toblackbg
+	\frame{
+		\includegraphics[width=0.3\textwidth]{MQ_INT_HOR_RGB_REV}
+	}
+	\tolightbg
+
+\end{document}
